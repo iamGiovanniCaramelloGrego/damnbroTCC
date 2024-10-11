@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil do Usuário</title>
+    <link rel="stylesheet" href="perfil.css"> <!-- Link para o CSS -->
+</head>
+<body>
+    <div class="profile-header">
+        <img src="profile-picture.jpg" alt="Foto de Perfil" class="profile-picture">
+        <h2 class="profile-name">Nome do Usuário</h2>
+        <p class="profile-email">email@exemplo.com</p>
+        <input type="file" id="profilePictureInput" accept="image/*" />
+        <button class="edit-profile-button">Editar Perfil</button>
+    </div>
+    
+        <div class="profile-details">
+            <h3>Sobre Mim</h3>
+            <p>Descrição do usuário vai aqui.</p>
+            
+            <h3>Atividades Recentes</h3>
+            <ul class="activity-list">
+                <li>Atividade 1</li>
+                <li>Atividade 2</li>
+                <li>Atividade 3</li>
+            </ul>
+        </div>
+        <button class="edit-profile-button">Editar Perfil</button>
+    </div>
+
+    <!-- Modal para edição de perfil -->
+    <!-- Modal para edição de perfil -->
+<div id="editProfileModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <form id="editProfileForm">
+            <label for="name">Nome:</label>
+            <input type="text" id="name" required>
+            <label for="email">Email:</label>
+            <input type="email" id="email" required>
+            <button type="submit">Salvar</button>
+        </form>
+    </div>
+</div>
+<div class="back-button">
+    <a href="fy.html">Voltar</a>
+</div>
+    <!-- Script JavaScript -->
+    <script src="script.js"></script> <!-- Link para o JavaScript -->
+</body>
+</html>

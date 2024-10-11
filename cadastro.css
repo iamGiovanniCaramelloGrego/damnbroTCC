@@ -1,0 +1,95 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilos do body e html */
+body, html {
+    height: 100%;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Container principal */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    background-color: #FF6D00; /* Cor de fundo laranja */
+}
+
+/* Estilo do formulário de cadastro */
+.card-login {
+    background-color: #ffffff; /* Cor de fundo branca */
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    width: 300px; /* Largura do formulário */
+}
+
+/* Títulos do formulário */
+h1, h2 {
+    margin-bottom: 10px;
+    color: #FF6D00; /* Cor do texto laranja */
+}
+
+/* Estilo dos campos de texto */
+.textfield {
+    margin-bottom: 15px; /* Espaçamento entre os campos */
+}
+
+.textfield label {
+    display: block; /* Faz o rótulo ocupar toda a largura */
+    margin-bottom: 5px; /* Espaçamento abaixo do rótulo */
+    color: #333; /* Cor do texto do rótulo */
+    font-weight: bold; /* Negrito para o rótulo */
+}
+
+.textfield input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc; /* Borda leve */
+    border-radius: 5px; /* Bordas arredondadas */
+    transition: border-color 0.3s; /* Transição suave na cor da borda */
+}
+
+.textfield input:focus {
+    border-color: #FF6D00; /* Cor da borda ao focar */
+    outline: none; /* Remove o contorno padrão */
+}
+
+/* Estilo do botão de cadastro */
+button {
+    padding: 10px;
+    width: 100%;
+    background-color: #FF6D00; /* Cor do botão */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #e65c00; /* Cor do botão ao passar o mouse */
+}
+
+/* Estilo da mensagem de erro */
+.error-message {
+    color: red; /* Cor da mensagem de erro */
+    text-align: center; /* Centraliza a mensagem */
+    margin-top: 10px; /* Espaçamento acima da mensagem */
+}
+
+/* Estilo de links */
+a {
+    color: #FF6D00; /* Cor do link */
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline; /* Sublinhado ao passar o mouse */
+}

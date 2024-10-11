@@ -1,0 +1,116 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4; /* Cor de fundo da página */
+}
+
+.profile-container {
+    background-color: #f9f9f9; /* Cor de fundo */
+    padding: 20px; /* Espaçamento interno */
+    border-radius: 8px; /* Bordas arredondadas */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra */
+    max-width: 400px; /* Largura máxima */
+    margin: 20px auto; /* Centraliza a seção na página */
+}
+
+.profile-header {
+    text-align: center; /* Centraliza o texto e a imagem */
+}
+
+.profile-picture {
+    width: 100px; /* Largura da imagem do perfil */
+    height: 100px; /* Altura da imagem do perfil */
+    border-radius: 50%; /* Deixa a imagem redonda */
+}
+
+.profile-name {
+    font-size: 24px; /* Tamanho da fonte do nome */
+    margin: 10px 0 5px; /* Margens do nome */
+}
+
+.profile-email {
+    font-size: 16px; /* Tamanho da fonte do email */
+    color: #555; /* Cor do texto */
+}
+
+.profile-details {
+    margin-top: 20px; /* Espaço acima dos detalhes */
+}
+
+.activity-list {
+    list-style-type: none; /* Remove marcadores da lista */
+    padding: 0; /* Remove preenchimento */
+}
+
+.activity-list li {
+    padding: 5px 0; /* Espaço entre as atividades */
+}
+
+.edit-profile-button {
+    margin-top: 20px; /* Espaço acima do botão */
+    padding: 10px 15px; /* Espaçamento no botão */
+    border: none; /* Remove borda */
+    border-radius: 5px; /* Bordas arredondadas */
+    background-color: #007bff; /* Cor de fundo do botão */
+    color: #fff; /* Cor do texto do botão */
+    cursor: pointer; /* Muda o cursor ao passar o mouse */
+}
+
+.edit-profile-button:hover {
+    background-color: #0056b3; /* Cor do botão ao passar o mouse */
+}
+
+/* Estilo do Modal */
+.modal {
+    display: none; /* Esconde o modal por padrão */
+    position: fixed; /* Fixa na tela */
+    z-index: 1; /* Fica em cima de outros elementos */
+    left: 0;
+    top: 0;
+    width: 100%; /* Largura total */
+    height: 100%; /* Altura total */
+    overflow: auto; /* Adiciona scroll se necessário */
+    background-color: rgb(0,0,0); /* Cor de fundo preta */
+    background-color: rgba(0,0,0,0.4); /* Fundo transparente */
+}
+
+.modal-content {
+    background-color: #fefefe; /* Cor de fundo do modal */
+    margin: 15% auto; /* Margem automática */
+    padding: 20px; /* Espaçamento interno */
+    border: 1px solid #888; /* Borda */
+    width: 80%; /* Largura do modal */
+}
+
+
+.close {
+    color: #aaa; /* Cor do "X" de fechar */
+    float: right; /* Alinha à direita */
+    font-size: 28px; /* Tamanho do "X" */
+    font-weight: bold; /* Negrito */
+}
+
+.close:hover,
+.close:focus {
+    color: black; /* Cor ao passar o mouse */
+    text-decoration: none; /* Remove sublinhado */
+    cursor: pointer; /* Muda o cursor ao passar o mouse */
+}
+.back-button {
+    margin: 20px;
+    text-align: center;
+}
+
+.back-button button, .back-button a {
+    padding: 10px 20px;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.back-button button:hover, .back-button a:hover {
+    background-color: #555;
+}

@@ -1,0 +1,93 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4; /* Fundo suave */
+    color: #333; /* Texto mais escuro para melhor contraste */
+    padding: 20px;
+    line-height: 1.6; /* Melhor legibilidade */
+    padding-top: 15%;
+}
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    background: white; /* Fundo branco para o container */
+    border-radius: 10px; /* Cantos arredondados */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    padding: 20px; /* Espaçamento interno */
+}
+
+h1 {
+    font-size: 26px; /* Aumentar o tamanho do título */
+    color: #FF6D00; /* Cor laranja */
+    margin-bottom: 10px;
+    text-align: center; /* Centraliza o título */
+}
+
+h2 {
+    font-size: 22px; /* Tamanho do subtítulo */
+    color: #FF6D00; /* Cor laranja */
+    margin-bottom: 10px;
+}
+
+p {
+    font-size: 18px;
+    margin-bottom: 20px;
+    text-align: center; /* Centraliza o texto do parágrafo */
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    margin-bottom: 20px;
+    border: 2px solid #FF6D00; /* Borda laranja */
+    border-radius: 5px;
+    transition: border-color 0.3s;
+}
+
+input[type="text"]:focus {
+    border-color: darkorange; /* Muda a cor da borda ao focar */
+    outline: none; /* Remove o contorno padrão */
+}
+
+button {
+    background-color: #FF6D00; /* Cor do botão */
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    margin: 10px 0; /* Margem entre botões */
+    width: 100%; /* Largura completa */
+    transition: background-color 0.3s, transform 0.3s; /* Efeitos de transição */
+}
+
+button:hover {
+    background-color: darkorange; /* Cor do botão ao passar o mouse */
+    transform: scale(1.05); /* Leve aumento ao passar o mouse */
+}
+
+.hidden {
+    display: none;
+}
+
+.product-section {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.product-section img {
+    width: 150px;
+    height: 150px;
+    object-fit: contain;
+    margin-bottom: 10px;
+    border-radius: 10px; /* Cantos arredondados nas imagens */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Sombra suave nas imagens */
+}

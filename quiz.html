@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#FF6D00">
+    <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet" href="quiz.css">
+    <title>Quiz Monarca</title>
+    <style>
+       
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div id="quiz-container">
+            <h1>Bem-vindo ao Quiz Monarca!</h1>
+            <p>Por favor, digite seu nome</p>
+            <input type="text" id="nameInput" placeholder="Digite seu nome aqui...">
+            <button id="startButton">Começar</button>
+        </div>
+        
+        <div id="recommendation-container" class="hidden">
+            <h1>Obrigado por completar o quiz, <span id="userName"></span>!</h1>
+            <p id="recommendationText"></p>
+
+            <div class="product-section">
+                <h2>Gel de Limpeza Recomendado</h2>
+                <img src="https://drogariasp.vteximg.com.br/arquivos/ids/668598-1000-1000/719102---Gel-De-Limpeza-Facial-Avene-Cleanance-400g-1.jpg?v=637903239395500000" alt="Gel de Limpeza">
+            </div>
+            <div class="product-section">
+                <h2>Hidratante Recomendado</h2>
+                <img src="https://m.media-amazon.com/images/I/51cj7VbcDSL._AC_UF1000,1000_QL80_.jpg" alt="Hidratante">
+            </div>
+            <div class="product-section">
+                <h2>Protetor Solar Recomendado</h2>
+                <img src="https://cdn.awsli.com.br/600x1000/764/764220/produto/34408638/b65df6de8d.jpg" alt="Protetor Solar">
+            </div>
+            <div class="product-section">
+                <h2>Tratamento Recomendado</h2>
+                <img src="https://cdn.principiaskin.com/media/catalog/product/cache/a11fc81ad62814be31cd922a993aa5ec/p/r/principia-skincare-cosmeticos-niacinamida-zinco-n-1_1.jpg" alt="Tratamento de pele">
+            </div>
+            <button id="restartButton">Reiniciar Quiz</button>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const questions = [
+                {
+                    question: "Qual é a sua idade",
+                    options: ["-18", "18 a 25", "26 a 35", "36 a 50", "51 a 65", "66+"]
+                },
+                {
+                    question: "Selecione a principal necessidade que você gostaria de cuidar da sua pele",
+                    options: ["Acne", "Oleosidade", "Manchas", "Linhas finas e flacidez", "Pele ressecada", "Olheiras e bolsas abaixo dos olhos", "Sensibilidade", "Textura irregular", "Poros dilatados", "Boca rachada", "Iniciar cuidados com a pele"]
+                },
+                {
+                    question: "Qual seu tipo de pele",
+                    options: ["Seca", "Normal", "Mista", "Oleosa"]
+                },
+                {
+                    question: "A oleosidade da sua pele geralmente te incomoda no dia a dia",
+                    options: ["Raramente me incomoda", "Me incomoda com certa frequência"]
+                },
+                {
+                    question: "Sua pele é sensível",
+                    options: ["Sim", "Não"]
+                },
+                {
+                    question: "Produtos de cuidados com a pele causam irritação, coceira, vermelhidão, ardência, ou 'alergia' em sua pele",
+                    options: ["Nunca ou raramente", "Frequentemente ou quase sempre"]
+                },
+                {
+                    question: "Você tem ou já teve o diagnóstico de acne, rosácea, dermatites, ou até mesmo câncer de pele",
+                    options: ["Sim", "Não"]
+                },
+                {
+                    question: "Sua pele demonstra sinais de atividade inflamatória neste momento? Ou seja, em alguma região da face com lesões, dor, ardência ou até mesmo quente",
+                    options: ["Sim", "Não"]
+                },
+                {
+                    question: "O quanto a questão do envelhecimento te incomoda",
+                    options: ["Não é a minha questão principal, não me incomoda tanto", "É uma questão relevante para mim"]
+                },
+                {
+                    question: "Gostaria de uma rotina de cuidados com a pele do corpo",
+                    options: ["Sim", "Não"]
+                },
+                {
+                    question: "Qual é a principal necessidade que você gostaria de cuidar na sua pele do corpo",
+                    options: ["Acne", "Manchas", "Flacidez", "Textura irregular", "Sensibilidade", "Ressecamento"]
+                }
+            ];
+
+            let currentQuestion = 0;
+            let answers = {};
+            const nameInput = document.getElementById('nameInput');
+            const startButton = document.getElementById('startButton');
+            const quizContainer = document.getElementById('quiz-container');
+            const recommendationContainer = document.getElementById('recommendation-container');
+            const userNameDisplay = document.getElementById('userName');
+            const recommendationText = document.getElementById('recommendationText');
+            const restartButton = document.getElementById('restartButton');
+
+            startButton.addEventListener('click', function () {
+                if (nameInput.value.trim()) {
+                    currentQuestion = 0;
+                    quizContainer.innerHTML = '';
+                    showQuestion();
+                } else {
+                    alert('Por favor, insira seu nome.');
+                }
+            });
+
+            function showQuestion() {
+                if (currentQuestion < questions.length) {
+                    const questionData = questions[currentQuestion];
+                    const questionText = document.createElement('p');
+                    questionText.textContent = questionData.question;
+
+                    quizContainer.innerHTML = '';
+                    quizContainer.appendChild(questionText);
+
+                    questionData.options.forEach(option => {
+                        const button = document.createElement('button');
+                        button.textContent = option;
+                        button.onclick = function () {
+                            answers[currentQuestion] = option;
+                            currentQuestion++;
+                            showQuestion();
+                        };
+                        quizContainer.appendChild(button);
+                    });
+                } else {
+                    showRecommendation();
+                }
+            }
+
+            function showRecommendation() {
+                quizContainer.classList.add('hidden');
+                recommendationContainer.classList.remove('hidden');
+                userNameDisplay.textContent = nameInput.value;
+                recommendationText.textContent = 'Baseado nas suas respostas, recomendamos os seguintes produtos para sua pele:';
+            }
+
+            restartButton.addEventListener('click', function () {
+                recommendationContainer.classList.add('hidden');
+                quizContainer.classList.remove('hidden');
+                currentQuestion = 0;
+                answers = {};
+                nameInput.value = '';
+                quizContainer.innerHTML = '';
+                nameInput.focus();
+            });
+        });
+    </script>
+</body>
+</html>
