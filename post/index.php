@@ -1,6 +1,6 @@
 <?php
 // Conectar ao banco de dados
-$conn = new mysqli('localhost', 'root', '', 'posts_db');
+$conn = new mysqli('localhost', 'root', '', 'meu_banco');
 if ($conn->connect_error) {
     die("Conexão falhou: " . $conn->connect_error);
 }
@@ -16,11 +16,11 @@ $result = $conn->query($sql);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Postagens</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../style.css">
 </head>
 <body>
     <h1>Postagens</h1>
-    <a href="form.html">Criar Nova Postagem</a>
+    <a href="../form.html">Criar Nova Postagem</a>
 
     <div class="postagens">
         <?php
