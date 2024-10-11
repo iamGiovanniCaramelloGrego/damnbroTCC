@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Criar Nova Postagem</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Criar Nova Postagem</h1>
+    
+    <form action="upload.php" method="POST" enctype="multipart/form-data">
+        <label for="texto">Escreva seu pensamento:</label>
+        <textarea id="texto" name="texto" rows="4" placeholder="Escreva algo aqui..."></textarea>
+
+        <label for="foto">Selecione uma foto (opcional):</label>
+        <input type="file" id="foto" name="foto" accept="image/*">
+
+        <label for="video">Selecione um vídeo (opcional):</label>
+        <input type="file" id="video" name="video" accept="video/*">
+
+        <button type="submit">Postar</button>
+    </form>
+
+    <a href="index.php">Voltar para a página inicial</a>
+</body>
+</html>

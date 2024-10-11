@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Postar Conteúdo</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Poste sua Foto, Vídeo ou Pensamento</h1>
+    <form action="upload.php" method="POST" enctype="multipart/form-data">
+        <label for="texto">Pensamento:</label>
+        <textarea id="texto" name="texto" placeholder="Escreva algo..."></textarea>
+
+        <label for="foto">Selecione uma foto:</label>
+        <input type="file" id="foto" name="foto" accept="image/*">
+
+        <label for="video">Selecione um vídeo:</label>
+        <input type="file" id="video" name="video" accept="video/*">
+
+        <button type="submit">Postar</button>
+    </form>
+
+    <div id="posts">
+        <!-- <?php
+            // Conectar ao banco de dados
+            $conn = new mysqli('localhost', 'root', '', 'posts_db');
+            if ($conn->connect_error) {
+                die("Conexão falhou: " . $conn->connect_error);
+            }
+
+            // Buscar e exibir posts
+            $sql = "SELECT * FROM posts ORDER BY data_postagem DESC";
+            $result = $conn->query($sql);
+
+            if ($result->num_rows > 0) {
+                while($row = $result->fetch_assoc()) {
+                    echo "<div class='post'>";
+                    echo "<p>Pensamento: " . htmlspecialchars($row['texto']) . "</p>";
+                    if ($row['foto']) {
+                        echo "<img src='uploads/" . htmlspecialchars($row['foto']) . "' alt='Foto'>";
+                    }
+                    if ($row['video']) {
+                        echo "<video src='uploads/" . htmlspecialchars($row['video']) . "' controls></video>";
+                    }
+                    echo "</div>";
+                }
+            } else {
+                echo "Nenhum post ainda.";
+            }
+
+            $conn->close();
+        ?> -->
+    </div>
+</body>
+</html>
